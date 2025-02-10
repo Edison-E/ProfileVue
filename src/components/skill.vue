@@ -1,0 +1,44 @@
+<script>
+
+</script>
+<template>
+    <div>
+        <div>
+            <ul>
+                <li>FrontEnd</li>
+                <li>BackEnd</li>
+                <li>DataBase</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>C#</li>
+                <li>Visual basic</li>
+                <li>Java</li>
+                <li>PHP</li>
+            </ul>
+            <ul>
+                <li>JavaScript</li>
+                <li>Html</li>
+                <li>Css</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>XML</li>
+                <li>XSD</li>
+                <li>DTD</li>
+                <li>XSLT</li>
+                <li>XPATH</li>
+            </ul>
+            <ul>
+                <li>Vue</li>
+                <li>JQUERY</li>
+            </ul>
+            <ul>
+                <li>GitHub</li>
+                <li>BitBucket</li>
+            </ul>
+        </div>
+    </div>
+</template>
