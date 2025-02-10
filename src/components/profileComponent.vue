@@ -4,21 +4,26 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <div class="container-sm border-bottom profileContainer">
         <div>
             <h1>Hole me llamo</h1>
-            <h1>Edison Enrique</h1>
+            <h1><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
         </div>
         <div>
-            <p>
-                Actualmente estoy en mi utlimo año de un grado superior de
-                <span>DESARROLLO DE APLICACIONES WEB</span>. Des del primer momento me apasionó la
-                programacion y todo lo que tenga que ver con el mundo del desarrollo.
-            </p>
-            <p>
-                Soy un chico muy curioso, me encanta aprender nuevas cosas y mejorar mis habilidades
-                tecnicas.
-            </p>
+            Actualmente estoy en mi utlimo año de un grado superior de
+            DESARROLLO DE APLICACIONES WEB. Des del primer momento me apasionó la
+            programacion y todo lo que tenga que ver con el mundo del desarrollo.
+
+            Soy un chico muy curioso, me encanta aprender nuevas cosas y mejorar mis habilidades
+            tecnicas.
         </div>
     </div>
 </template>
+<style scoped>
+.profileContainer {
+    width: 700px;
+    margin-left: 11%;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+</style>

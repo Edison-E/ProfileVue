@@ -15,5 +15,5 @@ export default {
 <template>
     <profileComponent></profileComponent>
     <skillComponent></skillComponent>
-    <skillComponent></skillComponent>
+    <sidebarComponent></sidebarComponent>
 </template>

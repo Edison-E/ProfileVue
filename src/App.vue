@@ -4,11 +4,14 @@ export default {
   name: 'App',
   components: {
     contentComponent
+  },
+  mounted() {
+    document.body.classList.add('bg-black','bg-gradient', 'text-white');
   }
 }
 </script>
 <template>
   <div>
-   <contentComponent></contentComponent>
+    <contentComponent></contentComponent>
   </div>
 </template>
