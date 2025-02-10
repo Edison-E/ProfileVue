@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: "sidebar"
+    name: "sidebarComponent"
 }
 </script>
 <template>

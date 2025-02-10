@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: "skill"
+    name: "skillComponent"
 }
 </script>
 <template>

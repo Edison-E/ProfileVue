@@ -1,14 +1,14 @@
 <script>
-import content from './components/content.vue'
+import contentComponent from './components/contentComponent.vue'
 export default {
   name: 'App',
   components: {
-    content
+    contentComponent
   }
 }
 </script>
 <template>
   <div>
-   <content></content>
+   <contentComponent></contentComponent>
   </div>
 </template>

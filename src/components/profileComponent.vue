@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: "profile"
+    name: "profileComponent"
 }
 </script>
 <template>
