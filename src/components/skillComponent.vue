@@ -1,22 +1,45 @@
 <script>
 export default {
-    name: "skillComponent"
+    name: "skillComponent",
+    data() {
+        return {
+            isVisible: {
+                Front: false,
+                Back: false,
+                Bd: false,
+                Tecnologia: false,
+                Framework: false,
+                ControlVersion: false
+            }
+        }
+    },
+    methods: {
+        visibleLenguaje(typeLenguaje){
+            this.isVisible[typeLenguaje] = !this.isVisible[typeLenguaje]
+        },
+        visibleFrameworkTecnologia(category){
+            this.isVisible[category] = !this.isVisible[category]
+        },
+        visibleVersionControl(typeVersion){
+            this.isVisible[typeVersion] = !this.isVisible[typeVersion]
+        }
+    }
 }
 </script>
 <template>
     <div class="container-sm skillContent">
         <ul class="list-group list-group-horizontal">
             <li class="list-group-item bg-dark text-white">
-                <span>FrontEnd</span>
-                <ul>
+                <span @click="visibleLenguaje('Front')">FrontEnd</span>
+                <ul v-show="isVisible['Front']">
                     <li>JavaScript</li>
                     <li>Html</li>
                     <li>Css</li>
                 </ul>
             </li>
             <li class="list-group-item bg-dark text-white">
-                <span>BackEnd</span>
-                <ul>
+                <span @click="visibleLenguaje('Back')">BackEnd</span>
+                <ul v-show="isVisible['Back']">
                     <li>C#</li>
                     <li>Visual basic</li>
                     <li>Java</li>
@@ -24,8 +47,8 @@ export default {
                 </ul>
             </li>
             <li class="list-group-item bg-dark text-white">
-                <span>DataBase</span>
-                <ul>
+                <span @click="visibleLenguaje('Bd')">DataBase</span>
+                <ul v-show="isVisible['Bd']">
                     <li>Sql</li>
                     <li>Pl/Sql</li>
                 </ul>
@@ -34,8 +57,8 @@ export default {
 
         <ul class="list-group list-group-horizontal">
             <li class="list-group-item bg-dark text-white">
-                <span>Tecnologias</span>
-                <ul>
+                <span @click="visibleFrameworkTecnologia('Tecnologia')">Tecnologias</span>
+                <ul v-show="isVisible['Tecnologia']">
                     <li>XML</li>
                     <li>XSD</li>
                     <li>DTD</li>
@@ -44,8 +67,8 @@ export default {
                 </ul>
             </li>
             <li class="list-group-item bg-dark text-white">
-                <span>Frameworks</span>
-                <ul>
+                <span @click="visibleFrameworkTecnologia('Framework')">Frameworks</span>
+                <ul v-show="isVisible['Framework']">
                     <li>Vue</li>
                     <li>JQUERY</li>
                 </ul>
@@ -54,8 +77,8 @@ export default {
 
         <ul class="list-group list-group-horizontal">
             <li class="list-group-item bg-dark text-white">
-                <span>Control Versiones</span>
-                <ul>
+                <span @click="visibleVersionControl('ControlVersion')">Control Versiones</span>
+                <ul v-show="isVisible['ControlVersion']">
                     <li>GitHub</li>
                     <li>BitBucket</li>
                 </ul>
