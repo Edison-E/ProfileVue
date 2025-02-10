@@ -17,7 +17,7 @@ export default {
         visibleLenguaje(typeLenguaje){
             this.isVisible[typeLenguaje] = !this.isVisible[typeLenguaje]
         },
-        visibleFrameworkTecnologia(category){
+        visibleFrameworkTechnologies(category){
             this.isVisible[category] = !this.isVisible[category]
         },
         visibleVersionControl(typeVersion){
@@ -57,7 +57,7 @@ export default {
 
         <ul class="list-group list-group-horizontal">
             <li class="list-group-item bg-dark text-white">
-                <span @click="visibleFrameworkTecnologia('Tecnologia')">Tecnologias</span>
+                <span @click="visibleFrameworkTechnologies('Tecnologia')">Technologies</span>
                 <ul v-show="isVisible['Tecnologia']">
                     <li>XML</li>
                     <li>XSD</li>
@@ -67,17 +67,18 @@ export default {
                 </ul>
             </li>
             <li class="list-group-item bg-dark text-white">
-                <span @click="visibleFrameworkTecnologia('Framework')">Frameworks</span>
+                <span @click="visibleFrameworkTechnologies('Framework')">Frameworks</span>
                 <ul v-show="isVisible['Framework']">
                     <li>Vue</li>
                     <li>JQUERY</li>
+                    <li>Bootstrap</li>
                 </ul>
             </li>
         </ul>
 
         <ul class="list-group list-group-horizontal">
             <li class="list-group-item bg-dark text-white">
-                <span @click="visibleVersionControl('ControlVersion')">Control Versiones</span>
+                <span @click="visibleVersionControl('ControlVersion')">Control Version</span>
                 <ul v-show="isVisible['ControlVersion']">
                     <li>GitHub</li>
                     <li>BitBucket</li>
