@@ -1,5 +1,7 @@
 <script>
-
+export default {
+    name: "skill"
+}
 </script>
 <template>
     <div>

@@ -1,15 +1,14 @@
-<template>
-  <div>
-    <p>Hola mundo</p>
-  </div>
-</template>
-
 <script>
-
+import content from './components/content.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    content
+  }
 }
 </script>
-
-<style>
-</style>
+<template>
+  <div>
+   <content></content>
+  </div>
+</template>
