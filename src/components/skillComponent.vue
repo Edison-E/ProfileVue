@@ -49,53 +49,57 @@ export default {
 }
 </script>
 <template>
-    <div class="container-sm skillContent">
+    <div class="container text-center">
+        <!--Lenguaje-->
+        <div class="row container-lenguaje">
+            <div v-for="(skills, category) in skill" :key="category" class="col-md-4">
+                <div class="skill-card" @click="visibleLenguaje(category)">
+                    {{ category }}
+                </div>
+                <div v-show="isVisible[category]" class="details">
+                    <div v-for="(percentage, language) in skills" :key="language">
+                        {{ language }} <span class="badge text-bg-primary">{{ percentage }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Lenguaje -->
-        <ul class="list-group list-group-horizontal">
-            <li v-for="(skills, category) in skill" :key="category" class="list-group-item bg-dark text-white">
-                <span @click="visibleLenguaje(category)">{{ category }}</span>
-                <ul v-show="isVisible[category]" class="list-group list-group-flush">
-                    <li v-for="(percentage, lenguaje) in skills" :key="lenguaje"
-                        class="list-group-item bg-dark text-white">
-                        {{ lenguaje }} <span class="badge text-bg-primary rounded-pill"> {{ percentage }}</span>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-        <!-- Frameworks and Technologies -->
-        <ul class="list-group list-group-horizontal">
-            <li v-for="(values, category) in FrameworkTechnologies" :key="category"
-                class="list-group-item bg-dark text-white">
-                <span @click="visibleLenguaje(category)">{{ category }}</span>
-                <ul v-show="isVisible[category]" class="list-group list-group-flush">
-                    <li v-for="(value, index) in values" :key="index" class="list-group-item bg-dark text-white">
+        <!--Framework Technologies-->
+        <div class="row mt-3 container-FrameworkTechnologies">
+            <div v-for="(values, category) in FrameworkTechnologies" :key="category" class="col-md-6">
+                <div class="skill-card" @click="visibleFrameworkTechnologies(category)">
+                    {{ category }}
+                </div>
+                <div v-show="isVisible[category]" class="details">
+                    <div v-for="(value, index) in values" :key="index">
                         {{ value }}
-                    </li>
-                </ul>
-            </li>
-        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Control Version -->
-        <ul class="list-group list-group-horizontal">
-            <li class="list-group-item bg-dark text-white">
-                <span @click="visibleVersionControl('ControlVersion')">Control Version</span>
-                <ul v-for="(cv) in ControlVersion" :key="cv" v-show="isVisible['ControlVersion']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">{{ cv }}</li>
-                </ul>
-            </li>
-        </ul>
-
+        <!--Control Version-->
+        <div class="row mt-3 container-ControlVersion">
+            <div class="col-md-12">
+                <div class="skill-card" @click="visibleVersionControl('ControlVersion')">
+                    Control Version
+                </div>
+                <div v-show="isVisible['ControlVersion']" class="details">
+                    <div v-for="(cv, index) in ControlVersion" :key="index">
+                        {{ cv }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <style scoped>
-.skillContent ul {
-    padding-bottom: 20px;
-    padding-right: 20px;
+.skill-card {
+    background: linear-gradient(to bottom, rgb(45, 50, 62), rgb(18, 20, 28));
+    margin-bottom: 10px;
 }
 
-.skillContent ul li ul {
-    margin-top: 10px;
+.skill-card:hover {
+    background: linear-gradient(to bottom, rgb(61, 67, 82), rgb(31, 34, 46));
 }
 </style>
