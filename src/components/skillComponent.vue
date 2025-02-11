@@ -4,13 +4,35 @@ export default {
     data() {
         return {
             isVisible: {
-                Front: false,
-                Back: false,
-                Bd: false,
+                FrontEnd: false,
+                BackEnd: false,
+                DataBase: false,
                 Tecnologia: false,
                 Framework: false,
                 ControlVersion: false
-            }
+            },
+            skill: {
+                "FrontEnd": {
+                    'Javascript': 100,
+                    'Html': 100,
+                    'Css': 100
+                },
+                "BackEnd": {
+                    'C#': 100,
+                    'Visual Basic': 100,
+                    'Java': 100,
+                    'PHP': 100
+                },
+                "DataBase": {
+                    'Sql': 100,
+                    'Pl/Sql': 100
+                }
+            },
+            FrameworkTechnologies: {
+                "Framework": ['Vue', 'JQUERY', 'Bootstrap'],
+                "Technologies": ['XML', 'XSD', 'DTD', 'XSLT', 'XPATH']
+            },
+            ControlVersion: ["GitHub", "BitBucket"]
         }
     },
     methods: {
@@ -31,63 +53,26 @@ export default {
 
         <!-- Lenguaje -->
         <ul class="list-group list-group-horizontal">
-            <li class="list-group-item bg-dark text-white">
-                <span @click="visibleLenguaje('Front')">FrontEnd</span>
-                <ul v-show="isVisible['Front']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">
-                        JavaScript <span class="badge text-bg-primary rounded-pill"> 100%</span></li>
-                    <li class="list-group-item bg-dark text-white">
-                        Html <span class="badge text-bg-primary rounded-pill"> 100%</span></li>
-                    <li class="list-group-item bg-dark text-white">Css
-                        <span class="badge text-bg-primary rounded-pill"> 100%</span>
+            <li v-for="(skills, category) in skill" :key="category" class="list-group-item bg-dark text-white">
+                <span @click="visibleLenguaje(category)">{{ category }}</span>
+                <ul v-show="isVisible[category]" class="list-group list-group-flush">
+                    <li v-for="(percentage, lenguaje) in skills" :key="lenguaje"
+                        class="list-group-item bg-dark text-white">
+                        {{ lenguaje }} <span class="badge text-bg-primary rounded-pill"> {{ percentage }}</span>
                     </li>
-                </ul>
-            </li>
-            <li class="list-group-item bg-dark text-white">
-                <span @click="visibleLenguaje('Back')">BackEnd</span>
-                <ul v-show="isVisible['Back']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">C#
-                        <span class="badge text-bg-primary rounded-pill"> 100%</span>
-                    </li>
-                    <li class="list-group-item bg-dark text-white">
-                        Visual basic <span class="badge text-bg-primary rounded-pill"> 100%</span></li>
-                    <li class="list-group-item bg-dark text-white">
-                        Java <span class="badge text-bg-primary rounded-pill"> 100%</span></li>
-                    <li class="list-group-item bg-dark text-white">PHP
-                        <span class="badge text-bg-primary rounded-pill"> 100%</span>
-                    </li>
-                </ul>
-            </li>
-            <li class="list-group-item bg-dark text-white">
-                <span @click="visibleLenguaje('Bd')">DataBase</span>
-                <ul v-show="isVisible['Bd']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">Sql
-                        <span class="badge text-bg-primary rounded-pill"> 100%</span>
-                    </li>
-                    <li class="list-group-item bg-dark text-white">
-                        Pl/Sql <span class="badge text-bg-primary rounded-pill"> 100%</span></li>
                 </ul>
             </li>
         </ul>
 
         <!-- Frameworks and Technologies -->
         <ul class="list-group list-group-horizontal">
-            <li class="list-group-item bg-dark text-white">
-                <span @click="visibleFrameworkTechnologies('Tecnologia')">Technologies</span>
-                <ul v-show="isVisible['Tecnologia']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">XML</li>
-                    <li class="list-group-item bg-dark text-white">XSD</li>
-                    <li class="list-group-item bg-dark text-white">DTD</li>
-                    <li class="list-group-item bg-dark text-white">XSLT</li>
-                    <li class="list-group-item bg-dark text-white">XPATH</li>
-                </ul>
-            </li>
-            <li class="list-group-item bg-dark text-white">
-                <span @click="visibleFrameworkTechnologies('Framework')">Frameworks</span>
-                <ul v-show="isVisible['Framework']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">Vue</li>
-                    <li class="list-group-item bg-dark text-white">JQUERY</li>
-                    <li class="list-group-item bg-dark text-white">Bootstrap</li>
+            <li v-for="(values, category) in FrameworkTechnologies" :key="category"
+                class="list-group-item bg-dark text-white">
+                <span @click="visibleLenguaje(category)">{{ category }}</span>
+                <ul v-show="isVisible[category]" class="list-group list-group-flush">
+                    <li v-for="(value, index) in values" :key="index" class="list-group-item bg-dark text-white">
+                        {{ value }}
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -96,12 +81,12 @@ export default {
         <ul class="list-group list-group-horizontal">
             <li class="list-group-item bg-dark text-white">
                 <span @click="visibleVersionControl('ControlVersion')">Control Version</span>
-                <ul v-show="isVisible['ControlVersion']" class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-white">GitHub</li>
-                    <li class="list-group-item bg-dark text-white">BitBucket</li>
+                <ul v-for="(cv) in ControlVersion" :key="cv" v-show="isVisible['ControlVersion']" class="list-group list-group-flush">
+                    <li class="list-group-item bg-dark text-white">{{ cv }}</li>
                 </ul>
             </li>
         </ul>
+
     </div>
 </template>
 <style scoped>
