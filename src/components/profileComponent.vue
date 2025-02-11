@@ -6,7 +6,7 @@ export default {
 <template>
     <div class="container-sm border-bottom profileContainer">
         <div>
-            <h1>Hole me llamo</h1>
+            <h1>Hola, me llamo</h1>
             <h1><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
         </div>
         <div>

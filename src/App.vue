@@ -6,12 +6,21 @@ export default {
     contentComponent
   },
   mounted() {
-    document.body.classList.add('bg-black','bg-gradient', 'text-white');
+    document.body.classList.add('text-white');
   }
 }
 </script>
 <template>
-  <div>
+  <div class="container-app">
     <contentComponent></contentComponent>
   </div>
 </template>
+<style>
+body {
+  background: linear-gradient(to bottom, rgb(0, 0, 6), rgb(1, 1, 16));
+}
+
+.container-app {
+  margin-top: 50px;
+}
+</style>
