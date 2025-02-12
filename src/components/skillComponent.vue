@@ -102,4 +102,10 @@ export default {
 .skill-card:hover {
     background: linear-gradient(to bottom, rgb(61, 67, 82), rgb(31, 34, 46));
 }
+
+.col-md-4,
+.col-md-6,
+.col-md-12 {
+    width: 400px;
+}
 </style>
