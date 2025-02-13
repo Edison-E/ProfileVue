@@ -11,11 +11,11 @@ export default {
         </div>
         <div>
             Actualmente estoy en mi utlimo año de un grado superior de
-            DESARROLLO DE APLICACIONES WEB. Des del primer momento me apasionó la
+            DESARROLLO DE APLICACIONES WEB. Desde del primer momento me apasionó la
             programacion y todo lo que tenga que ver con el mundo del desarrollo.
 
             Soy un chico muy curioso, me encanta aprender nuevas cosas y mejorar mis habilidades
-            tecnicas.
+            técnicas.
         </div>
     </div>
 </template>

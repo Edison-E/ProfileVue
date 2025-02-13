@@ -22,7 +22,7 @@ export default {
                     'C#': 100,
                     'Visual Basic': 100,
                     'Java': 100,
-                    'PHP': 100
+                    'PHP': 70
                 },
                 "DataBase": {
                     'Sql': 100,
@@ -30,11 +30,10 @@ export default {
                 }
             },
             FrameworkTechnologies: {
-                "Framework": ['Vue', 'JQUERY', 'Bootstrap'],
+                "Framework": ['Vue', 'JQUERY', 'Bootstrap', '.NET Framework', 'Laravel'],
                 "Technologies": ['XML', 'XSD', 'DTD', 'XSLT', 'XPATH']
             },
-            ControlVersion: ["GitHub", "BitBucket"],
-            Tools: ["Oracle", "Visual Studio", "Visual Studio Code", "Neatbeans" ,"Apache"]
+            Tools: ["Oracle", "Visual Studio", "Visual Studio Code", "Neatbeans", "Apache", "GitHub", "BitBucket"]
         }
     },
     methods: {
@@ -43,9 +42,6 @@ export default {
         },
         visibleFrameworkTechnologies(category) {
             this.isVisible[category] = !this.isVisible[category]
-        },
-        visibleVersionControl(typeVersion) {
-            this.isVisible[typeVersion] = !this.isVisible[typeVersion]
         },
         visibleTools(typeTool) {
             this.isVisible[typeTool] = !this.isVisible[typeTool]
@@ -63,7 +59,13 @@ export default {
                 </div>
                 <div v-show="isVisible[category]" class="details">
                     <div v-for="(percentage, language) in skills" :key="language">
-                        {{ language }} <span class="badge text-bg-primary">{{ percentage }}%</span>
+                        {{ language }}
+                        <div class="progress" role="progressbar" aria-label="Progress example"
+                            :aria-valuenow="percentage" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" :class="percentage === 100 ? 'bg-success' : 'bg-warning'"
+                                :style="{ width: percentage + '%' }"></div>
+                        </div>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -91,20 +93,6 @@ export default {
                 <div v-show="isVisible['Tool']" class="details">
                     <div v-for="(tool, index) in Tools" :key="index">
                         {{ tool }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Control Version-->
-        <div class="row mt-3 container-ControlVersion">
-            <div class="col-md-12">
-                <div class="skill-card" @click="visibleVersionControl('ControlVersion')">
-                    Control Version
-                </div>
-                <div v-show="isVisible['ControlVersion']" class="details">
-                    <div v-for="(cv, index) in ControlVersion" :key="index">
-                        {{ cv }}
                     </div>
                 </div>
             </div>
