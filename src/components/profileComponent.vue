@@ -21,8 +21,8 @@ export default {
 </template>
 <style scoped>
 .profileContainer {
-    width: 700px;
-    margin-left: 11%;
+    width: 80%;
+    margin-left: 5%;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }

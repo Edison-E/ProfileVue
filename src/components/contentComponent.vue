@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template>
+    <sidebarComponent></sidebarComponent>
     <profileComponent></profileComponent>
     <skillComponent></skillComponent>
-    <sidebarComponent></sidebarComponent>
 </template>

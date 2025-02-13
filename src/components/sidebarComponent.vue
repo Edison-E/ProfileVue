@@ -4,13 +4,40 @@ export default {
 }
 </script>
 <template>
-    <div>
-        <button>☽</button>
-        <br /><br />
-        <button>In</button>
-        <br /><br />
-        <button>M</button>
-        <br /><br />
-        <button><a href="/public/Currículum Edison 2024.pdf" download="Edisoncv.pdf">Cv</a></button>
-    </div>
+    <nav class="navigation">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">☽</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/edisonenriquedev/">linkedIn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Currículum</a>
+            </li>
+        </ul>
+    </nav>
 </template>
+<style scoped>
+.navigation {
+    margin-left: 100px;
+    margin-bottom: 40px;
+    width: 80%;
+}
+
+.nav-link {
+    color: orange
+}
+
+.nav-link:hover {
+    background-color: rgb(52, 49, 49);
+    color: white;
+}
+
+.nav-item {
+    border: 1px solid white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-right: 20px;
+}
+</style>

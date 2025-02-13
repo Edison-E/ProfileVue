@@ -9,7 +9,8 @@ export default {
                 DataBase: false,
                 Tecnologia: false,
                 Framework: false,
-                ControlVersion: false
+                ControlVersion: false,
+                Tool: false
             },
             skill: {
                 "FrontEnd": {
@@ -32,7 +33,8 @@ export default {
                 "Framework": ['Vue', 'JQUERY', 'Bootstrap'],
                 "Technologies": ['XML', 'XSD', 'DTD', 'XSLT', 'XPATH']
             },
-            ControlVersion: ["GitHub", "BitBucket"]
+            ControlVersion: ["GitHub", "BitBucket"],
+            Tools: ["Oracle", "Visual Studio", "Visual Studio Code", "Neatbeans" ,"Apache"]
         }
     },
     methods: {
@@ -44,6 +46,9 @@ export default {
         },
         visibleVersionControl(typeVersion) {
             this.isVisible[typeVersion] = !this.isVisible[typeVersion]
+        },
+        visibleTools(typeTool) {
+            this.isVisible[typeTool] = !this.isVisible[typeTool]
         }
     }
 }
@@ -58,14 +63,15 @@ export default {
                 </div>
                 <div v-show="isVisible[category]" class="details">
                     <div v-for="(percentage, language) in skills" :key="language">
-                        {{ language }} <span class="badge text-bg-primary">{{ percentage }}</span>
+                        {{ language }} <span class="badge text-bg-primary">{{ percentage }}%</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Framework Technologies-->
+        <!--Framework Technologies and Tools-->
         <div class="row mt-3 container-FrameworkTechnologies">
+            <!--Framework Technologies-->
             <div v-for="(values, category) in FrameworkTechnologies" :key="category" class="col-md-6">
                 <div class="skill-card" @click="visibleFrameworkTechnologies(category)">
                     {{ category }}
@@ -73,6 +79,18 @@ export default {
                 <div v-show="isVisible[category]" class="details">
                     <div v-for="(value, index) in values" :key="index">
                         {{ value }}
+                    </div>
+                </div>
+            </div>
+
+            <!--Tools-->
+            <div class="col-md-4">
+                <div class="skill-card" @click="visibleTools('Tool')">
+                    Tools
+                </div>
+                <div v-show="isVisible['Tool']" class="details">
+                    <div v-for="(tool, index) in Tools" :key="index">
+                        {{ tool }}
                     </div>
                 </div>
             </div>
@@ -94,6 +112,11 @@ export default {
     </div>
 </template>
 <style scoped>
+.container {
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
 .skill-card {
     background: linear-gradient(to bottom, rgb(45, 50, 62), rgb(18, 20, 28));
     margin-bottom: 10px;
@@ -107,5 +130,6 @@ export default {
 .col-md-6,
 .col-md-12 {
     width: 400px;
+    font-size: 20px;
 }
 </style>
