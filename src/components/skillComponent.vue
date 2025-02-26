@@ -58,14 +58,16 @@ export default {
                     {{ category }}
                 </div>
                 <div v-show="isVisible[category]" class="details">
-                    <div v-for="(percentage, language) in skills" :key="language">
-                        {{ language }}
-                        <div class="progress" role="progressbar" aria-label="Progress example"
-                            :aria-valuenow="percentage" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar" :class="percentage === 100 ? 'bg-success' : 'bg-warning'"
-                                :style="{ width: percentage + '%' }"></div>
+                    <div v-for="(percentage, language) in skills" :key="language" class="skill-item">
+                        <span class="language">{{ language }}</span>
+                        <div class="progress-container">
+                            <div class="progress" role="progressbar" :aria-valuenow="percentage" aria-valuemin="0"
+                                aria-valuemax="100">
+                                <div class="progress-bar" :class="percentage === 100 ? 'bg-success' : 'bg-warning'"
+                                    :style="{ width: percentage + '%' }">
+                                </div>
+                            </div>
                         </div>
-                        <br>
                     </div>
                 </div>
             </div>
@@ -108,7 +110,30 @@ export default {
 
 .skill-card {
     background: linear-gradient(to bottom, rgb(45, 50, 62), rgb(18, 20, 28));
+    color: orange;
     margin-bottom: 10px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.language {
+    flex: 1;
+    text-align: left;
+    font-size: 16px;
+}
+
+.progress-container {
+    flex: 2;
+    max-width: 60%;
+}
+
+.progress {
+    height: 10px;
 }
 
 .skill-card:hover {
@@ -118,6 +143,7 @@ export default {
 .col-md-4,
 .col-md-6,
 .col-md-12 {
+    margin-bottom: 3%;
     width: 400px;
     font-size: 20px;
 }
