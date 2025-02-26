@@ -4,50 +4,57 @@ export default {
 }
 </script>
 <template>
-
-    <ul class="nav justify-content-center">
+    <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img  src="@/assets/svg/lightbulb.svg" alt="light" id="light">
+                <img  src="@/assets/svg/lightbulb.svg" alt="light" id="light" class="icon">
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=" https://www.linkedin.com/in/edisonenriquedev/">
-                <img src="@/assets/svg/linkedin.svg" alt="linkedin" id="linkedin">
+                <img src="@/assets/svg/linkedin.svg" alt="linkedin" id="linkedin" class="icon">
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img src="@/assets/svg/information.svg" alt="curriculum" id="curriculum">
+                <img src="@/assets/svg/information.svg" alt="curriculum" id="curriculum" class="icon">
             </a>
         </li>
     </ul>
 
 </template>
 <style scoped>
-#light {
-    width: 11%;
-}
-
-#linkedin {
-    width: 6%;
-}
-
-#curriculum {
-    width: 11%;
-}
-
 .nav {
-    width: 50%;
-    margin: auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
 }
+
+.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
 
 .nav-link {
-    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .nav-link:hover {
-    color: white;
+    transform: scale(1.1);
+    border-bottom: 1px solid white;
 }
 </style>
