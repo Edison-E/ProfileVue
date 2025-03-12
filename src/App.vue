@@ -16,6 +16,10 @@ export default {
   </div>
 </template>
 <style>
+* {
+  cursor: url('./assets/image/gam1502.cur'), auto;
+}
+
 body {
   background: linear-gradient(to bottom, rgb(0, 0, 6), rgb(1, 1, 16));
 }

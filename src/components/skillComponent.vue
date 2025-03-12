@@ -127,6 +127,10 @@ export default {
     margin-bottom: 10px;
 }
 
+.container-lenguaje, .container-Technologies {
+    margin-left: 20%;
+}
+
 #title-card {
     margin-left: 5%;
 }
