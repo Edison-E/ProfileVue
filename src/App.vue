@@ -18,6 +18,7 @@ export default {
 <style>
 * {
   cursor: url('./assets/image/gam1502.cur'), auto;
+  font-family: "Quicksand", sans-serif;
 }
 
 body {

@@ -17,29 +17,29 @@ export default {
             skill: {
                 "FrontEnd": {
                     'img': require('@/assets/image/front.png'),
-                    'Javascript': 100,
-                    'Html': 100,
-                    'Css': 100,
-                    'Vue.js': 100,
-                    'JQuery': 100,
-                    'Bootstrap':70
+                    'Javascript': 'Advanced',
+                    'Html': 'Advanced',
+                    'Css': 'Advanced',
+                    'Vue.js': 'Advanced',
+                    'JQuery': 'Advanced',
+                    'Bootstrap': 'Intermediate'
                 },
                 "BackEnd": {
                     'img': require('@/assets/image/back.png'),
-                    'C#': 100,
-                    'Visual Basic': 100,
-                    'Java': 100,
-                    'PHP': 70,
-                    'Sql': 100,
-                    'Pl/Sql': 100,
-                    '.NET Framework':100,
-                    'Laravel' : 70
+                    'C#': 'Advanced',
+                    'Visual Basic': 'Advanced',
+                    'Java': 'Advanced',
+                    'PHP': 'Intermediate',
+                    'Sql': 'Advanced',
+                    'Pl/Sql': 'Advanced',
+                    '.NET Framework': 'Advanced',
+                    'Laravel': 'Intermediate'
                 }
             },
             Technologies: {
                 "XMLTech": {
                     'img': xmlTechImg,
-                    'items':  ['XML', 'XSD', 'DTD', 'XSLT', 'XPATH']
+                    'items': ['XML', 'XSD', 'DTD', 'XSLT', 'XPATH']
                 }
             },
             Tools: ["Oracle", "Visual Studio", "Visual Studio Code", "Neatbeans", "Apache", "GitHub", "BitBucket"],
@@ -64,19 +64,14 @@ export default {
         <div class="row container-lenguaje">
             <div v-for="(skills, category) in skill" :key="category" class="col-md-4">
                 <div class="skill-card">
-                   <img  id="img-card" :src="skills.img" alt="Camino"  @click="visibleLenguaje(category)">
-                   <span id="title-card"> {{ category }}</span>
+                    <img id="img-card" :src="skills.img" alt="Camino" @click="visibleLenguaje(category)">
+                    <span id="title-card"> {{ category }}</span>
                 </div>
                 <div v-show="isVisible[category]" class="details">
-                    <div v-for="(percentage, language) in skills" :key="language" class="skill-item">
-                        <span class="language" v-if="language !== 'img'">{{ language }}</span>
-                        <div class="progress-container"  v-if="language !== 'img'">
-                            <div class="progress" role="progressbar" :aria-valuenow="percentage" aria-valuemin="0"
-                                aria-valuemax="100">
-                                <div class="progress-bar" :class="percentage === 100 ? 'bg-success' : 'bg-warning'"
-                                    :style="{ width: percentage + '%' }">
-                                </div>
-                            </div>
+                    <div v-for="(status, language) in skills" :key="language" class="skill-item">
+                        <div class="status-details" v-if="language !== 'img'">
+                            <span class="language">{{ language }}</span><br>
+                            <span class="status">{{ status }}</span>
                         </div>
                     </div>
                 </div>
@@ -88,7 +83,7 @@ export default {
             <!--Framework Technologies-->
             <div v-for="(values, category) in Technologies" :key="category" class="col-md-6">
                 <div class="skill-card">
-                    <img :src="values.img" alt="icono" id="img-card"  @click="visibleTechnologies(category)">
+                    <img :src="values.img" alt="icono" id="img-card" @click="visibleTechnologies(category)">
                     <span id="title-card">{{ category }}</span>
                 </div>
                 <div v-show="isVisible[category]" class="details-other">
@@ -100,10 +95,10 @@ export default {
 
             <!--Tools-->
             <div class="col-md-4">
-                <div class="skill-card" >
-                     <img src="../assets/image/tool.png" alt="icono" id="img-card" @click="visibleTools('Tool')">
-                     <span id="title-card">Tools</span>
-                    
+                <div class="skill-card">
+                    <img src="../assets/image/tool.png" alt="icono" id="img-card" @click="visibleTools('Tool')">
+                    <span id="title-card">Tools</span>
+
                 </div>
                 <div v-show="isVisible['Tool']" class="details-other">
                     <div v-for="(tool, index) in Tools" :key="index">
@@ -127,7 +122,26 @@ export default {
     margin-bottom: 10px;
 }
 
-.container-lenguaje, .container-Technologies {
+.status-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+}
+
+.language {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.status {
+    font-size: 14px;
+    color: #b0aeae;
+}
+
+.container-lenguaje,
+.container-Technologies {
     margin-left: 20%;
 }
 
@@ -135,7 +149,7 @@ export default {
     margin-left: 5%;
 }
 
-#img-card{
+#img-card {
     width: 40px;
     height: 40px;
 }
@@ -162,21 +176,6 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
-}
-
-.language {
-    flex: 1;
-    text-align: left;
-    font-size: 16px;
-}
-
-.progress-container {
-    flex: 2;
-    max-width: 60%;
-}
-
-.progress {
-    height: 10px;
 }
 
 .col-md-4,
