@@ -6,6 +6,8 @@ export default {
             proyect: {
                 "Authentication C#": ["This project consists of simple authentication with JWT", "2 months ago", "https://github.com/Edison-E/AuthenticationBack"],
                 "ProfileVUe": ["This project consists of my portfolio made with vue and bootstrap", "Now", "https://github.com/Edison-E/ProfileVue"],
+                "BookingNet": ["This project consists of a booking service for different types of services, such as booking a hotel room, a table in a restaurant, among others.", "month ago", "https://github.com/Edison-E/BookingNET"],
+                "BookNet": ["This project is a simple library management application.", "12 months ago", "https://github.com/Edison-E/BookNET"]
             }
         }
     }
@@ -15,32 +17,40 @@ export default {
     <div class="container-sm proyectContainer">
         <h1>Proyects</h1>
 
-        <div v-for="(value, proyect) in proyect" :key="proyect" class="card-proyect">
-            <div class="card-title">{{ proyect }}</div>
-            <div class="card-details">
-                <p class="card-text">{{ value[0] }}</p>
-                <a :href="value[2]" class="">Go repository</a>
-                <p class="card-update"> {{ value[1] }}</p>
+        <div class="grid-container">
+            <div v-for="(value, proyect) in proyect" :key="proyect" class="card-proyect">
+                <div class="card-title">{{ proyect }}</div>
+                <div class="card-details">
+                    <p class="card-text">{{ value[0] }}</p>
+                    <a :href="value[2]" class="">Go repository</a>
+                    <p class="card-update"> {{ value[1] }}</p>
+                </div>
+                <br>
             </div>
-            <br>
         </div>
+
 
     </div>
 
 </template>
 <style scoped>
 .proyectContainer {
-    width: 50%;
-    margin-left: 5%;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 5%;
+    padding: 10px;
 }
 
-.card-proyect{
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-proyect {
     margin-top: 5%;
     padding: 2%;
-    width: 40%;
-    height: 10%;
     background-color: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease-in-out;
 }
@@ -55,6 +65,4 @@ export default {
     transform: scale(1.05);
     color: #fff;
 }
-
-
 </style>

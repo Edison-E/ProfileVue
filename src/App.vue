@@ -10,11 +10,13 @@ export default {
   }
 }
 </script>
+
 <template>
   <div class="container-app">
     <contentComponent></contentComponent>
   </div>
 </template>
+
 <style>
 * {
   cursor: url('./assets/image/gam1502.cur'), auto;
