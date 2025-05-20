@@ -1,5 +1,5 @@
 <script>
-import xmlTechImg from '@/assets/image/xmlTech.png';
+import xmlTechImg from '@/assets/image/skill/xmlTech.png';
 
 export default {
     name: "skillComponent",
@@ -16,7 +16,7 @@ export default {
             },
             skill: {
                 "FrontEnd": {
-                    'img': require('@/assets/image/front.png'),
+                    'img': require('@/assets/image/skill/front.png'),
                     'Javascript': 'Advanced',
                     'Html': 'Advanced',
                     'Css': 'Advanced',
@@ -25,15 +25,15 @@ export default {
                     'Bootstrap': 'Intermediate'
                 },
                 "BackEnd": {
-                    'img': require('@/assets/image/back.png'),
+                    'img': require('@/assets/image/skill/back.png'),
                     'C#': 'Advanced',
                     'Visual Basic': 'Advanced',
                     'Java': 'Advanced',
-                    'PHP': 'Intermediate',
+                    'PHP': 'Advanced',
                     'Sql': 'Advanced',
                     'Pl/Sql': 'Advanced',
                     '.NET Framework': 'Advanced',
-                    'Laravel': 'Intermediate'
+                    'Laravel': 'Advanced'
                 }
             },
             Technologies: {
@@ -96,7 +96,7 @@ export default {
             <!--Tools-->
             <div class="col-md-4">
                 <div class="skill-card">
-                    <img src="../assets/image/tool.png" alt="icono" id="img-card" @click="visibleTools('Tool')">
+                    <img src="../assets/image/skill/tool.png" alt="icono" id="img-card" @click="visibleTools('Tool')">
                     <span id="title-card">Tools</span>
 
                 </div>
