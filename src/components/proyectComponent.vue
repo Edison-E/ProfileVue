@@ -62,7 +62,7 @@ export default {
 }
 </script>
 <template>
-    <div class="container-sm proyectContainer">
+    <div class="proyectContainer">
         <h1>My Proyects</h1>
 
         <div class="grid-container">
@@ -86,8 +86,10 @@ export default {
 .proyectContainer {
     width: 100%;
     max-width: 1200px;
-    margin: 5%;
     padding: 10px;
+    margin-top: 3%;
+    margin-left: 4%;
+    margin-bottom: 10%;
 }
 
 .grid-container {
@@ -95,6 +97,11 @@ export default {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
+}
+
+.border-bottom {
+  margin-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .card-details {

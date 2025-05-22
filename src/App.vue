@@ -32,7 +32,7 @@ export default {
     <div class="typing-wrapper">
       <h1 class="typing-effect">Web Developer</h1>
     </div>
-    <img class="glow-image" src="./assets/image/skill/post.png" @mouseover="showContentMouse">
+    <img class="glow-image" src="./assets/image/post.png" @mouseover="showContentMouse">
   </div>
 
   <div class="container-app" v-show="showContent">

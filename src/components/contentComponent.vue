@@ -3,6 +3,7 @@ import profileComponent from './profileComponent.vue'
 import sidebarComponent from './sidebarComponent.vue'
 import skillComponent from './skillComponent.vue'
 import proyectComponent from './proyectComponent.vue'
+import footerComponent from './footerComponent.vue'
 
 export default {
     name: "contentComponent",
@@ -10,7 +11,8 @@ export default {
         skillComponent,
         sidebarComponent,
         profileComponent,
-        proyectComponent
+        proyectComponent,
+        footerComponent
     }
 }
 </script>
@@ -19,4 +21,5 @@ export default {
     <profileComponent></profileComponent>
     <skillComponent></skillComponent>
     <proyectComponent></proyectComponent>
+    <footerComponent></footerComponent>
 </template>

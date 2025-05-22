@@ -6,29 +6,30 @@ export default {
 <template>
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <img  src="@/assets/svg/lightbulb.svg" alt="light" id="light" class="icon">
-            </a>
+            <a class="nav-link" href="#">Light</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">CV</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=" https://www.linkedin.com/in/edisonenriquedev/">
-                <img src="@/assets/svg/linkedin.svg" alt="linkedin" id="linkedin" class="icon">
+                Skill
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img src="@/assets/svg/information.svg" alt="curriculum" id="curriculum" class="icon">
+                Proyect
             </a>
         </li>
     </ul>
-
 </template>
 <style scoped>
 .nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; 
+    gap: 20px;
     list-style: none;
     padding: 0;
     margin: 20px auto;
@@ -51,6 +52,7 @@ export default {
     justify-content: center;
     padding: 5px;
     transition: transform 0.2s ease-in-out;
+    color: orange;
 }
 
 .nav-link:hover {
