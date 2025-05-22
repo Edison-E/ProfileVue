@@ -17,23 +17,23 @@ export default {
             skill: {
                 "FrontEnd": {
                     'img': require('@/assets/image/skill/front.png'),
+                    'Bootstrap': 'Intermediate',
                     'Javascript': 'Advanced',
-                    'Html': 'Advanced',
-                    'Css': 'Advanced',
-                    'Vue.js': 'Advanced',
                     'JQuery': 'Advanced',
-                    'Bootstrap': 'Intermediate'
+                    'Vue.js': 'Advanced',
+                    'Html': 'Advanced',
+                    'Css': 'Advanced'
                 },
                 "BackEnd": {
                     'img': require('@/assets/image/skill/back.png'),
-                    'C#': 'Advanced',
+                    '.NET Framework': 'Advanced',
                     'Visual Basic': 'Advanced',
+                    'Laravel': 'Advanced',
+                    'Pl/Sql': 'Advanced',
                     'Java': 'Advanced',
                     'PHP': 'Advanced',
                     'Sql': 'Advanced',
-                    'Pl/Sql': 'Advanced',
-                    '.NET Framework': 'Advanced',
-                    'Laravel': 'Advanced'
+                    'C#': 'Advanced'
                 }
             },
             Technologies: {
@@ -68,10 +68,13 @@ export default {
                     <span id="title-card"> {{ category }}</span>
                 </div>
                 <div v-show="isVisible[category]" class="details">
-                    <div v-for="(status, language) in skills" :key="language" class="skill-item">
+                    <div v-for="([language, status], index) in Object.entries(skills).filter(([k]) => k !== 'img')"
+                        :key="index" class="skill-item">
                         <div class="status-details" v-if="language !== 'img'">
-                            <span class="language">{{ language }}</span><br>
-                            <span class="status">{{ status }}</span>
+                            <div class="language-wrapper">
+                                <span class="language">{{ language }}</span><br>
+                                <span class="status" :class="{ 'hover-visible': true }">{{ status }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,12 +135,30 @@ export default {
 .language {
     font-weight: bold;
     font-size: 16px;
-    color: #ffffff;
 }
 
 .status {
-    font-size: 14px;
-    color: #b0aeae;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff7e6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+    font-size: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.language-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.skill-item:hover .status {
+    opacity: 1;
 }
 
 .container-lenguaje,
@@ -168,14 +189,30 @@ export default {
 }
 
 .details {
-    margin-left: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .skill-item {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
+    gap: 10px;
+    filter: drop-shadow(0px 0px 5px rgba(50, 50, 50, 0.8));
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    background-color: #ffa500;
+    color: rgb(0, 0, 0);
 }
 
 .col-md-4,

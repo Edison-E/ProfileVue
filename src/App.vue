@@ -1,18 +1,41 @@
 <script>
 import contentComponent from './components/contentComponent.vue'
+
 export default {
   name: 'App',
   components: {
     contentComponent
   },
+
+  data() {
+    return {
+      showContent: false
+    }
+  },
   mounted() {
     document.body.classList.add('text-white');
+  },
+  methods: {
+    showContentMouse() {
+      this.showContent = true;
+    }
   }
 }
 </script>
 
+
 <template>
-  <div class="container-app">
+  <div class="index" ref="topSection">
+    <div class="typing-wrapper">
+      <h1 class="typing-effect"><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
+    </div>
+    <div class="typing-wrapper">
+      <h1 class="typing-effect">Web Developer</h1>
+    </div>
+    <img class="glow-image" src="./assets/image/skill/post.png" @mouseover="showContentMouse">
+  </div>
+
+  <div class="container-app" v-show="showContent">
     <contentComponent></contentComponent>
   </div>
 </template>
@@ -24,10 +47,51 @@ export default {
 }
 
 body {
-  background: linear-gradient(to bottom, rgb(0, 0, 6), rgb(1, 1, 16));
+  background: radial-gradient(circle, #000000 0%, #000000 30%, #000000 100%);
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-app {
   margin-top: 50px;
+}
+
+.glow-image {
+  filter: drop-shadow(0 0 10px #ffffff);
+  transition: filter 0.3s ease;
+}
+
+.glow-image:hover {
+  filter: drop-shadow(0 0 20px #ffffff);
+}
+
+.typing-effect {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 4s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
 }
 </style>
