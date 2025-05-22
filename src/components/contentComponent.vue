@@ -17,9 +17,15 @@ export default {
 }
 </script>
 <template>
-    <sidebarComponent></sidebarComponent>
-    <profileComponent></profileComponent>
-    <skillComponent></skillComponent>
-    <proyectComponent></proyectComponent>
-    <footerComponent></footerComponent>
+    <sidebarComponent />
+    <section id="profile">
+        <profileComponent />
+    </section>
+    <section id="skill">
+        <skillComponent />
+    </section>
+    <section id="proyect">
+        <proyectComponent />
+    </section>
+    <footerComponent />
 </template>

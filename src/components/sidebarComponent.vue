@@ -13,12 +13,12 @@ export default {
             <a class="nav-link" href="#">CV</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href=" https://www.linkedin.com/in/edisonenriquedev/">
+            <a class="nav-link" href="#skill">
                 Skill
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#proyect">
                 Proyect
             </a>
         </li>
