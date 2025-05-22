@@ -59,7 +59,8 @@ export default {
 }
 </script>
 <template>
-    <div class="container border-bottom text-center">
+    <div class="container text-center">
+        <h1>Skills</h1>
         <!--Lenguaje-->
         <div class="row container-lenguaje">
             <div v-for="(skills, category) in skill" :key="category" class="col-md-4">
@@ -116,7 +117,7 @@ export default {
 .container {
     margin-top: 3%;
     margin-left: 4%;
-    margin-bottom: 2%;
+    margin-bottom: 15%;
 }
 
 .skill-card {

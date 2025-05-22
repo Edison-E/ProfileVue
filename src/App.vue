@@ -27,9 +27,7 @@ export default {
 <template>
   <div class="index" ref="topSection">
     <div class="typing-wrapper">
-      <h1 class="typing-effect"><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
-    </div>
-    <div class="typing-wrapper">
+      <h1><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
       <h1 class="typing-effect">Web Developer</h1>
     </div>
     <img class="glow-image" src="./assets/image/post.png" @mouseover="showContentMouse">
@@ -51,8 +49,9 @@ body {
 }
 
 .index {
+  margin-top: 10%;
+  margin-bottom: 20%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -64,6 +63,8 @@ body {
 .glow-image {
   filter: drop-shadow(0 0 10px #ffffff);
   transition: filter 0.3s ease;
+  width: 20%;
+  height: 20%;
 }
 
 .glow-image:hover {

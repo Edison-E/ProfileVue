@@ -4,11 +4,8 @@ export default {
 }
 </script>
 <template>
-    <div class="container-sm border-bottom profileContainer">
-        <div>
-            <h1>Hola, me llamo</h1>
-            <h1><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
-        </div>
+    <div class="container-sm profileContainer">
+        <h1>About me</h1>
         <div>
             Actualmente estoy en mi utlimo año de un grado superior de
             DESARROLLO DE APLICACIONES WEB. Desde del primer momento me apasionó la
@@ -24,6 +21,6 @@ export default {
     width: 80%;
     margin-left: 5%;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15%;
 }
 </style>
