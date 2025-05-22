@@ -12,7 +12,7 @@ export default {
         <li class="nav-item">
             <a class="nav-link" href="#">CV</a>
         </li>
-        
+
         <li class="nav-item">
             <a class="nav-link" href="#skill">
                 Skill
@@ -28,6 +28,10 @@ export default {
 </template>
 <style scoped>
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +39,7 @@ export default {
     list-style: none;
     padding: 0;
     margin: 20px auto;
+    margin-left: 44%;
 }
 
 .nav-item {
