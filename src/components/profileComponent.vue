@@ -47,6 +47,9 @@ export default {
 .aboutText {
     flex: 1;
     text-align: justify;
+    padding: 1%;
+    margin-top: 2%;
+    height: 3%;
 }
 
 .me {

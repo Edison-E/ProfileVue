@@ -59,7 +59,7 @@ export default {
 }
 </script>
 <template>
-    <div class="container text-center">
+    <div class="container">
         <h1>Skills</h1>
         <!--Lenguaje-->
         <div class="row container-lenguaje">
@@ -120,10 +120,15 @@ export default {
     margin-bottom: 15%;
 }
 
+.container h1{
+    margin-left: 7%;
+}
+
 .skill-card {
     width: 100%;
     color: #ffa500;
     margin-bottom: 10px;
+    margin-left: 25%;
 }
 
 .status-details {
@@ -164,7 +169,7 @@ export default {
 
 .container-lenguaje,
 .container-Technologies {
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 #title-card {
@@ -220,6 +225,7 @@ export default {
 .col-md-6,
 .col-md-12 {
     margin-bottom: 3%;
+    margin-right: 5%;
     width: 400px;
     font-size: 20px;
 }

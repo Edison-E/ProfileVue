@@ -92,16 +92,21 @@ export default {
     margin-bottom: 10%;
 }
 
+.proyectContainer h1 {
+    margin-left: 7%;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
+    margin-left: 7%;
 }
 
 .border-bottom {
-  margin-bottom: 30px;
-  padding-bottom: 60px;
+    margin-bottom: 30px;
+    padding-bottom: 60px;
 }
 
 .card-details {
