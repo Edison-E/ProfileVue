@@ -18,6 +18,9 @@ export default {
   methods: {
     showContentMouse() {
       this.showContent = true;
+    },
+    showDedicatoria() {
+      alert("Esta va por ti abuelo....")
     }
   }
 }
@@ -30,7 +33,7 @@ export default {
       <h1><span class="text-warning">E</span>dison <span class="text-warning">E</span>nrique</h1>
       <h1 class="typing-effect">Web Developer</h1>
     </div>
-    <img class="glow-image" src="./assets/image/post.png" @mouseover="showContentMouse">
+    <img class="glow-image" src="./assets/image/post.png" @mouseover="showContentMouse" @click="showDedicatoria">
   </div>
 
   <div class="container-app" v-show="showContent">

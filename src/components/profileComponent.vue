@@ -6,21 +6,57 @@ export default {
 <template>
     <div class="container-sm profileContainer">
         <h1>About me</h1>
-        <div>
-            Actualmente estoy en mi utlimo año de un grado superior de
-            DESARROLLO DE APLICACIONES WEB. Desde del primer momento me apasionó la
-            programacion y todo lo que tenga que ver con el mundo del desarrollo.
-
-            Soy un chico muy curioso, me encanta aprender nuevas cosas y mejorar mis habilidades
-            técnicas.
+        <div class="aboutContent">
+            <div class="aboutText">
+                <div>
+                    Soy un desarrollador full-stack con una gran pasión por la programación y todo lo relacionado con el
+                    mundo
+                    del desarrollo de software desde el primer momento en que lo descubrí.
+                </div>
+                <div>
+                    Me considero una persona curiosa y proactiva, siempre en busca de nuevos conocimientos y
+                    oportunidades para
+                    mejorar mis habilidades técnicas.
+                </div>
+                <div>
+                    Me gusta contribuir a los proyectos con buenas prácticas de desarrollo y un enfoque en la calidad
+                    del
+                    código.
+                </div>
+            </div>
+            <img src="../assets/image/me.png" class="me">
         </div>
     </div>
 </template>
 <style scoped>
 .profileContainer {
-    width: 80%;
-    margin-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
     padding-bottom: 10px;
-    margin-bottom: 15%;
+}
+
+.aboutContent {
+    display: flex;
+    align-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.aboutText {
+    flex: 1;
+    text-align: justify;
+}
+
+.me {
+    filter: drop-shadow(0 0 10px #ffffff);
+    transition: filter 0.3s ease;
+    width: 40%;
+    height: 40%;
+}
+
+.me:hover {
+    filter: drop-shadow(0 0 20px #ffffff);
 }
 </style>
