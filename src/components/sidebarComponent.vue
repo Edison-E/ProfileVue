@@ -10,7 +10,7 @@ export default {
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">CV</a>
+            <a class="nav-link" href="#profile">About me</a>
         </li>
 
         <li class="nav-item">

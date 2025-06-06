@@ -23,8 +23,11 @@ export default {
                     del
                     código.
                 </div>
+                <br>
+                <a href="#" class="cv">Curriculum</a>
             </div>
             <img src="../assets/image/me.png" class="me">
+
         </div>
     </div>
 </template>
@@ -49,7 +52,20 @@ export default {
     text-align: justify;
     padding: 1%;
     margin-top: 2%;
-    height: 3%;
+}
+
+.cv {
+    border-radius: 4px;
+    padding: 1%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-decoration: none;
+}
+
+.cv:hover {
+    transform: scale(1.05);
+    background-color: #ffa500;
+    color: rgb(0, 0, 0);
 }
 
 .me {
