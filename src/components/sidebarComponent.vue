@@ -18,7 +18,6 @@ export default {
                 Skill
             </a>
         </li>
-
         <li class="nav-item">
             <a class="nav-link" href="#proyect">
                 Proyect
@@ -37,9 +36,11 @@ export default {
     align-items: center;
     gap: 20px;
     list-style: none;
-    padding: 0;
+    padding: 1px;
     margin: 20px auto;
     margin-left: 44%;
+    border-radius: 10px;
+    background-color: #1e1e1e;
 }
 
 .nav-item {
@@ -64,6 +65,6 @@ export default {
 
 .nav-link:hover {
     transform: scale(1.1);
-    border-bottom: 1px solid white;
+    color: white
 }
 </style>

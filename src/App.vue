@@ -26,7 +26,6 @@ export default {
 }
 </script>
 
-
 <template>
   <div class="index" ref="topSection">
     <div class="typing-wrapper">
@@ -48,8 +47,7 @@ export default {
 }
 
 body {
-  background: radial-gradient(circle, #000000 0%, #000000 30%, #000000 100%);
-
+  background: linear-gradient(135deg, #000000, #232222);
 }
 
 .index {

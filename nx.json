@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nx/devkit/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint"
+        ]
+      }
+    }
+  },
+  "nxCloudId": "686ec3b92b3a5f7caaed6ded"
+}
