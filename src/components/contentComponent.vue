@@ -4,6 +4,7 @@ import sidebarComponent from './sidebarComponent.vue'
 import skillComponent from './skillComponent.vue'
 import proyectComponent from './proyectComponent.vue'
 import footerComponent from './footerComponent.vue'
+import programComponent from './programComponent.vue'
 
 export default {
     name: "contentComponent",
@@ -12,20 +13,25 @@ export default {
         sidebarComponent,
         profileComponent,
         proyectComponent,
-        footerComponent
+        footerComponent,
+        programComponent
     }
 }
 </script>
 <template>
     <sidebarComponent />
-    <section id="profile">
+
+    <programComponent title="About me" height="50%" width="50%">
         <profileComponent />
-    </section>
-    <section id="skill">
+    </programComponent>
+
+    <programComponent title="Skills" height="2%" width="70%">
         <skillComponent />
-    </section>
-    <section id="proyect">
+    </programComponent>
+
+    <programComponent title="My Proyects" height="20%" width="90%">
         <proyectComponent />
-    </section>
+    </programComponent>
+
     <footerComponent />
 </template>

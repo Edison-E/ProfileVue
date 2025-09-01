@@ -5,7 +5,6 @@ export default {
 </script>
 <template>
     <div class="container-sm profileContainer">
-        <h1>About me</h1>
         <div class="aboutContent">
             <div class="aboutText">
                 <div>

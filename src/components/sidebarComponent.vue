@@ -10,16 +10,16 @@ export default {
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#profile">About me</a>
+            <a class="nav-link" href="#About me">About me</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#skill">
+            <a class="nav-link" href="#Skills">
                 Skill
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#proyect">
+            <a class="nav-link" href="#My Proyects">
                 Proyect
             </a>
         </li>

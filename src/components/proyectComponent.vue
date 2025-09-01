@@ -63,8 +63,6 @@ export default {
 </script>
 <template>
     <div class="proyectContainer">
-        <h1>My Proyects</h1>
-
         <div class="grid-container">
             <div v-for="(value, proyect) in proyect" :key="proyect" class="card-details" id="imgProyect"
                 @mouseover="hoverProyect(proyect)" @mouseleave="leaveProyect" :style="BackgroundProyect(proyect)">

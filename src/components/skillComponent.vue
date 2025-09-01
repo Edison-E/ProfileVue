@@ -60,7 +60,6 @@ export default {
 </script>
 <template>
     <div class="container">
-        <h1>Skills</h1>
         <!--Lenguaje-->
         <div class="row container-lenguaje">
             <div v-for="(skills, category) in skill" :key="category" class="col-md-4">
