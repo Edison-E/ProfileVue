@@ -21,15 +21,15 @@ export default {
 <template>
     <sidebarComponent />
 
-    <programComponent title="About me" height="50%" width="50%">
+    <programComponent title="About me" height="50%" width="40%">
         <profileComponent />
     </programComponent>
 
-    <programComponent title="Skills" height="2%" width="70%">
+    <programComponent title="Skills" height="2%" width="55%">
         <skillComponent />
     </programComponent>
 
-    <programComponent title="My Proyects" height="20%" width="90%">
+    <programComponent title="My Proyects" height="20%" width="60%">
         <proyectComponent />
     </programComponent>
 

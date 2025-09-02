@@ -114,20 +114,30 @@ export default {
 </template>
 <style scoped>
 .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 20px;
+    margin: 0 auto;
     margin-top: 3%;
-    margin-left: 4%;
     margin-bottom: 15%;
 }
 
 .container h1{
-    margin-left: 7%;
+    margin-left: 3%;
+}
+
+.container-lenguaje,
+.container-Technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .skill-card {
     width: 100%;
     color: #ffa500;
     margin-bottom: 10px;
-    margin-left: 25%;
 }
 
 .status-details {
@@ -164,11 +174,6 @@ export default {
 
 .skill-item:hover .status {
     opacity: 1;
-}
-
-.container-lenguaje,
-.container-Technologies {
-    margin-left: 10%;
 }
 
 #title-card {
@@ -224,8 +229,8 @@ export default {
 .col-md-6,
 .col-md-12 {
     margin-bottom: 3%;
-    margin-right: 5%;
-    width: 400px;
     font-size: 20px;
+    flex: 1 1 250px;
+    max-width: 300px;
 }
 </style>

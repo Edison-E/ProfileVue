@@ -25,15 +25,11 @@ export default {
                 <br>
                 <a href="#" class="cv">Curriculum</a>
             </div>
-            <img src="../assets/image/me.png" class="me">
-
         </div>
     </div>
 </template>
 <style scoped>
 .profileContainer {
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 5%;
     padding-bottom: 10px;
 }
@@ -43,7 +39,6 @@ export default {
     align-content: flex-start;
     gap: 20px;
     flex-wrap: wrap;
-    width: 70%;
 }
 
 .aboutText {

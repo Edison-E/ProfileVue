@@ -85,9 +85,7 @@ export default {
     width: 100%;
     max-width: 1200px;
     padding: 10px;
-    margin-top: 3%;
-    margin-left: 4%;
-    margin-bottom: 10%;
+    margin-bottom: 60px;
 }
 
 .proyectContainer h1 {
@@ -96,10 +94,9 @@ export default {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     margin-top: 20px;
-    margin-left: 7%;
 }
 
 .border-bottom {
@@ -111,13 +108,13 @@ export default {
     position: relative;
     overflow: hidden;
     margin-top: 5%;
-    padding: 10%;
+    padding: 20px;
     border-radius: 3%;
     background: linear-gradient(135deg, rgba(176, 126, 1, 0.8), rgba(156, 146, 4, 0.8));
     backdrop-filter: blur(5px);
     transition: all 0.3s ease-in-out;
+    min-height: 180px;
     color: #fff;
-    height: 110%;
 }
 
 .card-details-two {
@@ -126,7 +123,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin-top: 5%;
-    padding: 10%;
+    padding: 15px;
     border-radius: 3%;
     background-color: #1e1e1e;
     transition: all 0.3s ease-in-out;
@@ -153,13 +150,29 @@ export default {
 
 .card-title {
     font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.card-update {
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 .card-link {
     color: white;
     text-decoration: none;
     border: 1px solid;
-    padding: 5px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .card-link:hover {
@@ -194,15 +207,14 @@ export default {
 }
 
 .tech-pill {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
     color: #ffffff;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .tech-pill:hover {
