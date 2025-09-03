@@ -47,7 +47,7 @@ export default {
 }
 
 body {
-  background: linear-gradient(135deg, #000000, #232222);
+  background: linear-gradient(135deg, #000000, #000000);
 }
 
 .index {

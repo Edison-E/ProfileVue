@@ -62,164 +62,173 @@ export default {
 }
 </script>
 <template>
-    <div class="proyectContainer">
-        <div class="grid-container">
-            <div v-for="(value, proyect) in proyect" :key="proyect" class="card-details" id="imgProyect"
-                @mouseover="hoverProyect(proyect)" @mouseleave="leaveProyect" :style="BackgroundProyect(proyect)">
-                <div class="overlay"></div>
-                <div class="card-title">{{ proyect }}</div>
-                <div class="card-text">{{ value.desc }}</div>
-                <div class="card-update"> {{ value.update }}</div>
+  <div class="proyectContainer">
+    <div class="grid-container">
+      <div
+        v-for="(value, proyect) in proyect"
+        :key="proyect"
+        class="card"
+        @mouseover="hoverProyect(proyect)"
+        @mouseleave="leaveProyect"
+        :style="BackgroundProyect(proyect)"
+      >
+        <!-- Overlay -->
+        <div class="overlay"></div>
+
+        <!-- Contenido principal -->
+        <div class="card-content">
+          <div class="card-header">
+            <h3 class="card-title">{{ proyect }}</h3>
+            <p class="card-update">{{ value.update }}</p>
+          </div>
+          <p class="card-text">{{ value.desc }}</p>
+
+          <!-- Stack y enlace -->
+          <div class="card-footer">
+            <div class="tech-stack">
+              <span
+                v-for="tech in value.tech"
+                :key="tech"
+                class="tech-pill"
+              >
+                {{ tech }}
+              </span>
             </div>
-            <div v-for="(value, proyect) in proyect" :key="proyect" class="card-details-two">
-                <div class="tech-stack">
-                    <span v-for="tech in value.tech" :key="tech" class="tech-pill">{{ tech }}</span>
-                </div>
-                <a class="card-link" :href="value.link">View repository</a>
-            </div>
+            <a class="card-link" :href="value.link" target="_blank">
+              View repository
+            </a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
+
 <style scoped>
 .proyectContainer {
-    width: 100%;
-    max-width: 1200px;
-    padding: 10px;
-    margin-bottom: 60px;
-}
-
-.proyectContainer h1 {
-    margin-left: 7%;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  margin-bottom: 60px;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
-.border-bottom {
-    margin-bottom: 30px;
-    padding-bottom: 60px;
+/* Tarjeta unificada */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #b07e01cc, #9c9204cc);
+  color: #fff;
+  min-height: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-details {
-    position: relative;
-    overflow: hidden;
-    margin-top: 5%;
-    padding: 20px;
-    border-radius: 3%;
-    background: linear-gradient(135deg, rgba(176, 126, 1, 0.8), rgba(156, 146, 4, 0.8));
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease-in-out;
-    min-height: 180px;
-    color: #fff;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
-.card-details-two {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5%;
-    padding: 15px;
-    border-radius: 3%;
-    background-color: #1e1e1e;
-    transition: all 0.3s ease-in-out;
-    color: #fff;
-    height: 100%;
-}
-
+/* Overlay de oscurecimiento */
 .overlay {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    transition: background-color 0.3s ease;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
-.card-details>*:not(.overlay) {
-    position: relative;
-    z-index: 2;
+.card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Contenido encima del overlay */
+.card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
+
+/* Encabezado */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .card-title {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.card-text {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    flex-grow: 1;
-    margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .card-update {
-    font-size: 0.8rem;
-    opacity: 0.8;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
-.card-link {
-    color: white;
-    text-decoration: none;
-    border: 1px solid;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+/* Descripción */
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 15px 0;
+  flex-grow: 1;
 }
 
-.card-link:hover {
-    background-color: #ffa500;
-    color: black;
-}
-
-.card-details:hover {
-    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-    color: #fff;
-}
-
-.card-content {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card-content.hidden {
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
+/* Footer (stack + link) */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .tech-stack {
-    margin-top: 10px;
-    margin-bottom: 15%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .tech-pill {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 5px 12px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    color: #ffffff;
-    transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .tech-pill:hover {
-    background-color: #ffa500;
-    color: black;
-    transform: scale(1.05);
+  background-color: #ffa500;
+  color: black;
+  transform: scale(1.05);
+}
+
+.card-link {
+  background-color: #ffa500;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 6px 14px;
+  transition: all 0.3s ease;
+}
+
+.card-link:hover {
+  background-color: #fff;
+  color: #000;
 }
 </style>
